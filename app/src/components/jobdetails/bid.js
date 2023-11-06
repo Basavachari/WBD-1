@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React,{useState} from 'react'
-
+import url from '../../backendurl'
 export default function Bid(props) {
     // const getdata = props.getdata;
     const [price, setPrice] = useState("")
@@ -18,10 +18,10 @@ export default function Bid(props) {
         }
 
 
-        axios.post("http://localhost:5000/api/proposal/addproposal",bid).then((res,error)=>{
+        axios.post(url + "api/proposal/addproposal",bid).then((res,error)=>{
             console.log(res.data)
             // console.log("thisdsda")
-            // axios.post("http://localhost:5000/api/job/updatejob",{jobid:props.jobId,proposal:res.data._id}).then((res)=>{
+            // axios.post(url + "api/job/updatejob",{jobid:props.jobId,proposal:res.data._id}).then((res)=>{
             //     console.log(res.data)
             //     })
         })

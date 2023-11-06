@@ -21,7 +21,7 @@ export default function JobDetails(props) {
     // const [JobData, setJobData] = React.useState({});
     // useEffect(async() => {
     //     // console.log(job_id)
-    //     const Job = await axios.get(`http://localhost:5000/api/job/getjob/${props.jobId}`).then(
+    //     const Job = await axios.get(url + `api/job/getjob/${props.jobId}`).then(
     //         (res)=>{
     //             // console.log(res.data.user.username)
     //             setJobData(res.data);

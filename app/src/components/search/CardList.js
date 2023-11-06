@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import NoResults from "./NoResults";
-
+import url from "../../backendurl";
 export default function CardList(props) {
   const [Data, setData] = useState([]);
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log(token)
-    // fetch("http://localhost:5000/api/job/getjobs")
-    axios.get("http://localhost:5000/api/job/getjobs",{
+    // fetch(url + "api/job/getjobs")
+    axios.get(url + "api/job/getjobs",{
       headers: {'x-auth-token': token}
     })
       .then((res) => {

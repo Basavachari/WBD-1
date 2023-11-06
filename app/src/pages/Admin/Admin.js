@@ -4,14 +4,14 @@ import './Admin.css'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
-
+import url from '../../backendurl';
 const AdminPage = ({ auth: { isAuthenticated }, setAlert, logout }) => {
   const [userList, setUserList] = useState([]);
   const [alerts, setAlerts] = useState([]);
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/profile/users');
+      const response = await fetch(url + 'api/profile/users');
       const data = await response.json();
       setUserList(data);
     } catch (error) {
@@ -22,7 +22,7 @@ const AdminPage = ({ auth: { isAuthenticated }, setAlert, logout }) => {
   const deleteUser = async (userId) => {
     try {
       console.log(userId);
-      await fetch(`http://localhost:5000/api/profile/users/${userId}`,{
+      await fetch(url + `api/profile/users/${userId}`,{
         method: 'DELETE',
       });
       setUserList(userList.filter((user) => user.id !== userId));

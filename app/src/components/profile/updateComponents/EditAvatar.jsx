@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Modal, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import url from '../../../backendurl';
 
 function EditAvatar({ auth: { user } }) {
   const [avatarFile, setAvatarFile] = useState(null);
@@ -39,7 +40,7 @@ function EditAvatar({ auth: { user } }) {
     e.preventDefault();
     const formData = new FormData();
     formData.append('avatar', avatarFile);
-    await fetch(`http://localhost:5000/api/profile/avatar/${user._id}`, {
+    await fetch(url + `api/profile/avatar/${user._id}`, {
       method: 'PUT',
       body: formData,
     })

@@ -3,13 +3,14 @@ import {Link} from "react-router-dom"
 import "./welcome.css"
 import axios from "axios";
 import { useEffect } from "react";
+import url from "../../backendurl"
 const Welcome = () => {
   const [data, setData] = React.useState(null);
   const token = localStorage.getItem('token');
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    const user = axios.get("http://localhost:5000/api/auth/",{
+    const user = axios.get(url + "api/auth/",{
       headers: {'x-auth-token': token}
     })
       .then((res) => {

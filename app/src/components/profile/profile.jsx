@@ -24,7 +24,7 @@ const CV = ({
     profile: { profile }
 }) => {
     // useEffect(() => {
-    //     axios.get("http://localhost:5000/api/profile/popularUser/", {
+    //     axios.get(url + "api/profile/popularUser/", {
     //         headers: { 'x-auth-token': token }
     //       })
     //         .then((res) => {

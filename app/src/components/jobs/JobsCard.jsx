@@ -16,7 +16,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import emailjs from '@emailjs/browser';
 // import Swal from 'sweetalert2'
 import { useRef } from 'react';
-
+import url from '../../backendurl'
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -52,8 +52,8 @@ const JobsCard = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log(token)
-    // fetch("http://localhost:5000/api/job/getjobs")
-    axios.get("http://localhost:5000/api/job/getjobbyuser", {
+    // fetch(url + "api/job/getjobs")
+    axios.get(url + "api/job/getjobbyuser", {
       headers: { 'x-auth-token': token }
     })
       .then((res) => {

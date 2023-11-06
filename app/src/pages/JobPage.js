@@ -9,7 +9,7 @@ import Search from "../common/header/Search";
 import JobDetails from "../components/jobdetails/jobDetails";
 import Job from "../components/jobdetails/somedata"
 
-
+import url from "../backendurl";
 
 
 function JobPage(props){
@@ -18,7 +18,7 @@ function JobPage(props){
     const [JobData, setJobData] = React.useState({});
     useEffect(() => {
         // console.log(job_id)
-        axios.get(`http://localhost:5000/api/job/getjob/${job_id}`).then(
+        axios.get(url + `api/job/getjob/${job_id}`).then(
             (res)=>{
                 console.log(res.data)
                 setJobData(res.data);

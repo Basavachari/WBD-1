@@ -103,7 +103,7 @@ function Login({login,isAuthenticated}){
     
 //               }}
 //               const body=JSON.stringify(fetchLoginData);
-//               const res=await axios.post('http://localhost:5000/api/users',body,config)
+//               const res=await axios.post(url + 'api/users',body,config)
 //         .then(resp=>{
 //             const data=resp.data;
 //             console.log(data);

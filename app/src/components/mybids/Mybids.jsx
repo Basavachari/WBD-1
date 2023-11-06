@@ -4,6 +4,8 @@ import "./Mybids.css";
 import { useEffect } from "react";
 import data from "./data";
 import Main from "./Main";
+
+import url from "../../backendurl";
 function getUserBids(userid) {
   let userBids = [];
 
@@ -43,8 +45,8 @@ function Mybids() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log(token)
-    // fetch("http://localhost:5000/api/job/getjobs")
-    axios.get("http://localhost:5000/api/proposal/getproposals",{
+    // fetch(url + "api/job/getjobs")
+    axios.get(url + "api/proposal/getproposals",{
       headers: {'x-auth-token': token}
     })
       .then((res) => {

@@ -4,7 +4,9 @@ import axios from "axios";
 // import image from './img1.png'
 //import { ThemeContext } from "./App";
 import { Link } from 'react-router-dom';
+import url from '../../backendurl';
 const Swal = require('sweetalert2')
+
 
 export default function AddJob() {
     const init = {
@@ -46,7 +48,7 @@ export default function AddJob() {
         // setIsSubmit(true);
         if (Object.keys(dataErrors).length === 0) {
             // let user = axios.get("https://localhost:5000/api/")
-            axios.post("http://localhost:5000/api/job/addjob", data);
+            axios.post(url + "api/job/addjob", data);
             // alert("Job added successfully ");
             setData(init);
             Swal.fire(
