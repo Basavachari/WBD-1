@@ -7,7 +7,7 @@ Group Members:
 - Vankudoth Nagesh        , S20200010221
 
 ## ABOUT THE APPLICATION:
-- After entring to the link mentioned above you will land on home page.
+- After entring to the link mentioned below you will land on home page of the application.
 - Anything to do in website a new user must have to login,existing user have to signup
 - We have 2 kind of registrations
   1. as a user
